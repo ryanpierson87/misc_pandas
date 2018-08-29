@@ -1,4 +1,4 @@
-def concat_agg(input_df, column_list, key, additional_columns, character= '; '):
+def concat_agg(input_df, column_list, key, additional_columns=None, character= '; '):
     """function that takes an existing DataFrame, a list of columns that you want to be concat_aggregated, 
     the key column you want things to be grouped together by, 
     and any additional columns you want to appear in the resulting dataframe, also the join value""" 
