@@ -48,17 +48,17 @@ def test():
 ##### OTHER FUNCTIONS
     
 def inc_val(df, key, val):
+    import numpy as np
     """Goes through a provided DataFrame, by a provided Key, and looks through the column of the provided value, 
     and increments that value by 1 for each time it reappears
     inc_val(df, key, val)
     val column should contain numeric values"""
-    if not isinstance(df.at[0, val]):
+    if not df[val].dtype == np.int64:
         print("inc_val() error. val column not numeric")
+        return
     dic = {}
     for i in range(len(df)):
-        print(i)
         search = df.at[i,key]
-        print(search)
         if search in dic:
             dic[search] += 1
             df.at[i, val] = dic[search]
